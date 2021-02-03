@@ -91,27 +91,34 @@ class UserManager {
 
         $data = filter_input_array(INPUT_POST, $args);
 
-        $username = $data['username'];
-        $password = $data['password'];
-        echo $username;
-        echo $password;
-        /*
-        $user_id = $db->selectUser($username, $password, "users");
-        
-        if ($user_id >= 0) {
-            //session start and delete last user's session from db
-            session_start();
-            $db->delete("DELETE FROM logged_in_users WHERE user_id=$user_id");
+        $errors = "";
 
-            //insert data to logged_in_users table
-            $last_update = date("Y-m-d H:i:s");
-            $session_id = session_id();
-            $db->insert("INSERT INTO logged_in_users (session_id, user_id, last_update) VALUES ('$session_id', '$user_id', '$last_update')");
-            session_destroy();
+        foreach ($data as $key => $val) {
+            if ($val === false or $val === NULL) {
+            $errors .= $key . " ";
+            }
         }
+        
+        if($errors === "") {
+            $username = $data['username'];
+            $password = $data['password'];
+            
+            $user_id = $db->selectUser($username, $password, "users");
+            
+            if ($user_id >= 0) {
+                //session start and delete last user's session from db
+                session_start();
+                $db->delete("DELETE FROM logged_in_users WHERE user_id=$user_id");
 
-        return $user_id;
-        */
+                //insert data to logged_in_users table
+                $last_update = date("Y-m-d H:i:s");
+                $session_id = session_id();
+                $db->insert("INSERT INTO logged_in_users (session_id, user_id, last_update) VALUES ('$session_id', '$user_id', '$last_update')");
+                session_destroy();
+            }
+
+            return $user_id;
+        }
         
     }
 
