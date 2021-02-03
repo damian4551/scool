@@ -1,0 +1,577 @@
+@import "initSettings.scss";
+
+//container styling
+.dashboard {
+    width: 100vw;
+    height: 100vh;
+    background-color: $grey;
+    .container {
+        padding: 20px;
+        @media (min-width: 1280px) {
+            display: grid;
+            grid-template-rows: 1fr 6fr;
+            grid-template-areas:
+                'timetable timetable progress progress progress progress'
+                'timetable timetable tasks1 tasks1 tasks2 tasks2';
+            grid-gap: 20px;
+            height: 90vh;
+        }
+        @media (min-width: 1440px) {
+            padding: 30px;
+            grid-gap: 30px;
+            height: 93vh;
+        }
+    }
+}
+
+//timetable styling
+.timetable-container {
+    width: 100%;
+    background-color: $white;
+    border-radius: 15px;
+    @include shadow;
+    @media (min-width: 1280px) {
+        grid-area: timetable;
+        display: flex;
+        flex-direction: column;
+    }
+    .timetable-title-container {
+        width: 100%;
+        padding: 15px 0;
+        display: flex;
+        justify-content: center;
+        @media (min-width: 1280px) {
+            padding: 25px 0;
+        }
+        @media (min-width: 1680px) {
+            padding: 40px 0;
+        }
+        .title-block {
+            position: relative;
+            width: 85px;
+            height: 30px;
+            line-height: 18px;
+            z-index: 10;
+            @media (min-width: 768px) {
+                width: 100px;
+                height: 35px;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                left: 5px;
+                width: 30px;
+                height: 10px;
+                background-color: $purple;
+                z-index: 9;
+            }
+            .main-line {
+                font-family: 'Poppins';
+                font-size: 1.25em;
+                font-weight: 700;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 10;
+                @media (min-width: 768px) {
+                    font-size: 1.4em;
+                }
+                @media (min-width: 1680px) {
+                    font-size: 1.6em;
+                }
+            }
+            .sub-line {
+                font-family: 'Lobster';
+                font-size: 1em;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                @media (min-width: 768px) {
+                    font-size: 1.2em;
+                }
+                @media (min-width: 1680px) {
+                    font-size: 1.4em;
+                }
+            }
+        }
+    }
+    .subject-list {
+        max-height: 350px;
+        margin-bottom: auto;
+        overflow-y: scroll;
+        ul {
+            list-style-type: none;
+            font-family: 'Poppins';
+            font-size: 0.75em;
+            font-weight: 300;
+            @media (min-width: 768px) {
+                font-size: 0.9em;
+            }
+            @media (min-width: 1680px) {
+                font-size: 1.1em;
+            }
+            .subject-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-top: 1px solid $lightGrey;
+                padding: 15px 20px;
+                @media (min-width: 768px) {
+                    padding: 15px 80px;
+                }
+                @media (min-width: 1280px) {
+                    padding: 15px 40px;
+                }
+                @media (min-width: 1680px) {
+                    padding: 15px 60px;
+                }
+                &:last-of-type {
+                    border-bottom: 1px solid $lightGrey;
+                }
+                .subject-name {
+                    color: $black;
+                }
+                .subject-time {
+                    font-weight: 700;
+                    color: $purple;
+                    text-align: right;
+                }
+            }
+        }
+    }
+    .link-block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+        a {
+            text-decoration: none;
+            font-family: 'Poppins';
+            font-size: 0.75em;
+            font-weight: 300;
+            color: $purple;
+            @media (min-width: 768px) {
+                font-size: 0.9em;
+            }
+            @media (min-width: 1680px) {
+                font-size: 1.1em;
+            }
+        }
+    }
+}
+
+//progress styling
+.progress-container {
+    height: 100%;
+    width: 100%;
+    background-color: $white;
+    border-radius: 15px;
+    margin-top: 20px;
+    padding: 15px 20px;
+    @include shadow;
+    @media (min-width: 768px) {
+        padding: 15px 80px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @media (min-width: 1280px) {
+        grid-area: progress;
+        margin-top: 0;
+        padding: 15px 60px;
+    }
+    .progress-text-block {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 10px;
+        @media (min-width: 768px) {
+            width: 50%;
+            margin: 0;
+            margin-right: 20px;
+        }
+        .text-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-family: 'Poppins';
+            .description-line {
+                font-size: 0.75em;
+                font-weight: 300;
+                @media (min-width: 768px) {
+                    font-size: 0.9em;
+                }
+                @media (min-width: 1680px) {
+                    font-size: 1.1em;
+                }
+            }
+            .amount-line {
+                font-size: 1.25em;
+                font-weight: 700;
+                @media (min-width: 1680px) {
+                    font-size: 1.75em;
+                }
+            }
+        }
+    }
+    .progress-bar {
+        height: 30px;
+        width: 100%;
+        background-color: $grey;
+        border-radius: 10px;
+        position: relative;
+        @media (min-width: 768px) {
+            height: 35px;
+            width: 30%;
+        }
+        @media (min-width: 1280px) {
+            height: 45px;
+        }
+        .progress-bar-amount {
+            position: absolute;
+            left: 0;
+            height: 100%;
+            background-color: $purple;
+            border-radius: 10px;
+        }
+    }
+}
+
+//tasks1 styling
+.tasks-container-1 {
+    width: 100%;
+    background-color: $white;
+    border-radius: 15px;
+    margin-top: 20px;
+    @include shadow;
+    @media (min-width: 1280px) {
+        grid-area: tasks1;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .tasks-title-container {
+        width: 100%;
+        padding: 15px 0;
+        display: flex;
+        justify-content: center;
+        @media (min-width: 1280px) {
+            padding: 25px 0;
+        }
+        @media (min-width: 1680px) {
+            padding: 40px 0;
+        }
+        .title-block {
+            position: relative;
+            width: 85px;
+            height: 30px;
+            line-height: 18px;
+            z-index: 10;
+            @media (min-width: 768px) {
+                width: 100px;
+                height: 35px;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                left: 5px;
+                width: 30px;
+                height: 10px;
+                background-color: $purple;
+                z-index: 9;
+            }
+            .main-line {
+                font-family: 'Poppins';
+                font-size: 1.25em;
+                font-weight: 700;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 10;
+                @media (min-width: 768px) {
+                    font-size: 1.4em;
+                }
+                @media (min-width: 1680px) {
+                    font-size: 1.6em;
+                }
+            }
+            .sub-line {
+                font-family: 'Lobster';
+                font-size: 1em;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                @media (min-width: 768px) {
+                    font-size: 1.2em;
+                }
+                @media (min-width: 1680px) {
+                    font-size: 1.4em;
+                }
+            }
+        }
+    }
+    .tasks-list {
+        padding: 15px 20px;
+        max-height: 350px;
+        overflow-y: scroll;
+        @media (min-width: 768px) {
+            padding: 15px 80px;
+        }
+        @media (min-width: 1280px) {
+            padding: 15px 40px;
+            margin-bottom: auto;
+        }
+        @media (min-width: 1680px) {
+            padding: 15px 60px;
+        }
+        .custom-checkbox {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            font-family: 'Poppins';
+            font-size: 0.75em;
+            font-weight: 300;
+            padding-left: 35px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            margin-bottom: 15px;
+            &:hover input ~ .checkmark {
+                background-color: $lightGrey;
+            }
+            @media (min-width: 768px) {
+                font-size: 0.9em;
+            }
+            @media (min-width: 1280px) {
+                padding-left: 45px;
+            }
+            @media (min-width: 1680px) {
+                font-size: 1.1em;
+            }
+            input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+                &:checked ~ .checkmark {
+                    background-color: $purple;
+                }
+            }
+            .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+                background-color: $grey;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                }
+            }
+            .delete-task {
+                position: absolute;
+                right: 0;
+                color: rgb(161, 40, 40);
+                font-weight: 700;
+                opacity: 0;
+            }
+            a {
+                color: $black;
+                text-decoration: none;
+            }
+          }
+    }
+    .link-block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+        a {
+            text-decoration: none;
+            font-family: 'Poppins';
+            font-size: 0.75em;
+            font-weight: 300;
+            color: $purple;
+            @media (min-width: 768px) {
+                font-size: 0.9em;
+            }
+            @media (min-width: 1680px) {
+                font-size: 1.1em;
+            }
+        }
+    }
+}
+
+//tasks2 styling
+.tasks-container-2 {
+    width: 100%;
+    background-color: $white;
+    border-radius: 15px;
+    margin-top: 20px;
+    @include shadow;
+    @media (min-width: 1280px) {
+        grid-area: tasks2;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .tasks-title-container {
+        width: 100%;
+        padding: 15px 0;
+        display: flex;
+        justify-content: center;
+        @media (min-width: 1280px) {
+            padding: 25px 0;
+        }
+        @media (min-width: 1680px) {
+            padding: 40px 0;
+        }
+        .title-block {
+            position: relative;
+            width: 85px;
+            height: 30px;
+            line-height: 18px;
+            z-index: 10;
+            @media (min-width: 768px) {
+                width: 100px;
+                height: 35px;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                left: 5px;
+                width: 30px;
+                height: 10px;
+                background-color: $purple;
+                z-index: 9;
+            }
+            .main-line {
+                font-family: 'Poppins';
+                font-size: 1.25em;
+                font-weight: 700;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 10;
+                @media (min-width: 768px) {
+                    font-size: 1.4em;
+                }
+                @media (min-width: 1680px) {
+                    font-size: 1.6em;
+                }
+            }
+            .sub-line {
+                font-family: 'Lobster';
+                font-size: 1em;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                @media (min-width: 768px) {
+                    font-size: 1.2em;
+                }
+                @media (min-width: 1680px) {
+                    font-size: 1.4em;
+                }
+            }
+        }
+    }
+    .tasks-list {
+        padding: 15px 20px;
+        max-height: 350px;
+        overflow-y: scroll;
+        @media (min-width: 768px) {
+            padding: 15px 80px;
+        }
+        @media (min-width: 1280px) {
+            padding: 15px 40px;
+            margin-bottom: auto;
+        }
+        @media (min-width: 1680px) {
+            padding: 15px 60px;
+        }
+        .custom-checkbox {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            font-family: 'Poppins';
+            font-size: 0.75em;
+            font-weight: 300;
+            padding-left: 35px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            margin-bottom: 15px;
+            &:hover input ~ .checkmark {
+                background-color: $lightGrey;
+            }
+            @media (min-width: 768px) {
+                font-size: 0.9em;
+            }
+            @media (min-width: 1280px) {
+                padding-left: 45px;
+            }
+            @media (min-width: 1680px) {
+                font-size: 1.1em;
+            }
+            input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+                &:checked ~ .checkmark {
+                    background-color: $purple;
+                }
+            }
+            .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+                background-color: $grey;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                }
+            }
+            .delete-task {
+                position: absolute;
+                right: 0;
+                color: rgb(161, 40, 40);
+                font-weight: 700;
+                opacity: 0;
+            }
+            a {
+                color: $black;
+                text-decoration: none;
+            }
+          }
+    }
+    .link-block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+        a {
+            text-decoration: none;
+            font-family: 'Poppins';
+            font-size: 0.75em;
+            font-weight: 300;
+            color: $purple;
+            @media (min-width: 768px) {
+                font-size: 0.9em;
+            }
+            @media (min-width: 1680px) {
+                font-size: 1.1em;
+            }
+        }
+    }
+}

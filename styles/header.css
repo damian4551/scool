@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@-webkit-keyframes showHint {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showHint {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.header {
+  width: 100vw;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 0px 10px 0px #cfcfcf;
+  box-shadow: 0px 0px 10px 0px #cfcfcf;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 20px 50px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header {
+    height: 10vh;
+  }
+}
+
+@media (min-width: 1440px) {
+  .header {
+    height: 7vh;
+  }
+}
+
+@media (min-width: 1680px) {
+  .header {
+    padding: 20px 80px;
+  }
+}
+
+.header .inner {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .inner .logo-block .logo {
+  font-family: 'Fredoka One';
+  font-size: 1.5em;
+}
+
+@media (min-width: 1280px) {
+  .header .inner .logo-block .logo {
+    font-size: 2em;
+  }
+}
+
+.header .inner .logo-block .logo a {
+  color: #1A1A1A;
+  text-decoration: none;
+}
+
+.header .inner .links-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+}
+
+.header .inner .links-block .link-item {
+  font-family: 'Poppins';
+  font-size: 0.75em;
+  font-weight: 300;
+  padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+  .header .inner .links-block .link-item {
+    font-size: 0.9em;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .header .inner .links-block .link-item {
+    padding-right: 60px;
+  }
+}
+
+@media (min-width: 1680px) {
+  .header .inner .links-block .link-item {
+    font-size: 1.1em;
+  }
+}
+
+.header .inner .links-block .link-item:last-of-type {
+  padding: 0;
+}
+
+.header .inner .links-block .link-item a {
+  text-decoration: none;
+  color: #1A1A1A;
+}
+/*# sourceMappingURL=header.css.map */

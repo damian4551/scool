@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@-webkit-keyframes showHint {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showHint {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  width: 100vw;
+  padding: 50px;
+}
+
+@media (min-width: 500px) {
+  .wrapper {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+.wrapper .logo-block {
+  margin-bottom: 50px;
+}
+
+.wrapper .logo-block .logo {
+  font-family: 'Fredoka One';
+  font-size: 4em;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .wrapper .logo-block .logo {
+    font-size: 8em;
+  }
+}
+
+.wrapper .error-block {
+  width: 100%;
+}
+
+.wrapper .error-block p {
+  text-align: center;
+  font-family: 'Poppins';
+  font-size: 0.75em;
+  font-weight: 300;
+  color: #F85353;
+}
+
+@media (min-width: 768px) {
+  .wrapper .error-block p {
+    font-size: 1em;
+  }
+}
+
+.wrapper .login-form {
+  margin-top: 50px;
+}
+
+.wrapper .login-form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .login-form form .input-block {
+  width: 100%;
+}
+
+@media (min-width: 500px) {
+  .wrapper .login-form form .input-block {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .wrapper .login-form form .input-block {
+    width: 40%;
+    max-width: 700px;
+  }
+}
+
+.wrapper .login-form form .input-block .input-element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #1A1A1A;
+  border-radius: 50px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .wrapper .login-form form .input-block .input-element {
+    padding: 12px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper .login-form form .input-block .input-element {
+    padding: 15px 0;
+  }
+}
+
+@media (min-width: 1680px) {
+  .wrapper .login-form form .input-block .input-element {
+    height: 70px;
+  }
+}
+
+.wrapper .login-form form .input-block .input-element img {
+  height: 20px;
+  width: auto;
+  margin: 0 10px;
+}
+
+@media (min-width: 768px) {
+  .wrapper .login-form form .input-block .input-element img {
+    height: 25px;
+    margin: 0 20px;
+  }
+}
+
+.wrapper .login-form form .input-block .input-element input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Poppins';
+  font-size: 0.75em;
+  font-weight: 300;
+  color: #1A1A1A;
+}
+
+@media (min-width: 768px) {
+  .wrapper .login-form form .input-block .input-element input {
+    font-size: 1em;
+  }
+}
+
+.wrapper .login-form form .input-block .input-element input ::-webkit-input-placeholder {
+  font-family: 'Poppins';
+  font-size: 0.75em;
+  font-weight: 300;
+  color: #1A1A1A;
+}
+
+.wrapper .login-form form .input-block .input-element input :-ms-input-placeholder {
+  font-family: 'Poppins';
+  font-size: 0.75em;
+  font-weight: 300;
+  color: #1A1A1A;
+}
+
+.wrapper .login-form form .input-block .input-element input ::-ms-input-placeholder {
+  font-family: 'Poppins';
+  font-size: 0.75em;
+  font-weight: 300;
+  color: #1A1A1A;
+}
+
+.wrapper .login-form form .input-block .input-element input ::placeholder {
+  font-family: 'Poppins';
+  font-size: 0.75em;
+  font-weight: 300;
+  color: #1A1A1A;
+}
+
+@media (min-width: 768px) {
+  .wrapper .login-form form .input-block .input-element input ::-webkit-input-placeholder {
+    font-size: 1em;
+  }
+  .wrapper .login-form form .input-block .input-element input :-ms-input-placeholder {
+    font-size: 1em;
+  }
+  .wrapper .login-form form .input-block .input-element input ::-ms-input-placeholder {
+    font-size: 1em;
+  }
+  .wrapper .login-form form .input-block .input-element input ::placeholder {
+    font-size: 1em;
+  }
+}
+
+.wrapper .login-form form .btn {
+  width: 40%;
+  border: 2px solid #1A1A1A;
+  border-radius: 50px;
+  font-family: 'Poppins';
+  font-size: 0.75em;
+  font-weight: 300;
+  color: #1A1A1A;
+  padding: 10px 0;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 80px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.wrapper .login-form form .btn:hover {
+  background-color: #1A1A1A;
+  color: #ffffff;
+}
+
+@media (min-width: 500px) {
+  .wrapper .login-form form .btn {
+    width: 30%;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper .login-form form .btn {
+    padding: 12px 0;
+    font-size: 1em;
+    width: 25%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper .login-form form .btn {
+    padding: 15px 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .wrapper .login-form form .btn {
+    width: 10%;
+    max-width: 280px;
+  }
+}
+
+@media (min-width: 1680px) {
+  .wrapper .login-form form .btn {
+    height: 70px;
+  }
+}
+
+.wrapper .links-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .links-block a {
+  text-decoration: none;
+  margin-bottom: 5px;
+  font-family: 'Poppins';
+  font-size: 0.75em;
+  font-weight: 300;
+  color: #1A1A1A;
+}
+
+@media (min-width: 768px) {
+  .wrapper .links-block a {
+    font-size: 1em;
+  }
+}
+
+.wrapper .links-block a span {
+  color: #A5A9D3;
+}
+/*# sourceMappingURL=form.css.map */

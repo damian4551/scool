@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+//variables
+$black: #1A1A1A;
+$white: #ffffff;
+$purple: #A5A9D3;
+$grey: #FAFAFA;
+$lightGrey: #E6E6E6;
+$red: #F85353;
+
+//initial settings
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+//mixins
+@mixin shadow {
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(207,207,207,1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(207,207,207,1);
+    box-shadow: 0px 0px 10px 0px rgba(207,207,207,1);
+}
+
+//animations
+@keyframes showHint {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
