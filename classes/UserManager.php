@@ -86,7 +86,7 @@ class UserManager {
 
         
         echo $user_id;
-        var_dump($_POST);
+
         /*
         $username = $data['username'];
         $password = $data['password'];

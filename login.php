@@ -21,6 +21,12 @@
 
     if (filter_input(INPUT_POST, "login_user")) {
         
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        echo $username;
+        echo $password;
+
         $user_id = $um->loginUser($db);
         
         if ($user_id == -1) {
