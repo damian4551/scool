@@ -19,7 +19,7 @@
     $um = new UserManager();
     $tm = new TimetableManager();
     $taskm = new TasksManager();
-    $db = new Database("localhost", "root", "", "scool_db");
+    $db = new Database();
 
     if (filter_input(INPUT_GET, "logout")) {
         $um->logoutUser($db);

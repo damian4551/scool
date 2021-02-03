@@ -14,7 +14,7 @@
     include_once 'classes/Database.php';
 
     $um = new UserManager();
-    $db = new Database("localhost", "root", "", "scool_db");
+    $db = new Database();
 
     $user_error = '';
 

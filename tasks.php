@@ -29,7 +29,7 @@
 
     $um = new UserManager();
     $taskm = new TasksManager();
-    $db = new Database("localhost", "root", "", "scool_db");
+    $db = new Database();
 
     //get current user_id
     session_start();

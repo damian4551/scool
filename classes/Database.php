@@ -4,15 +4,18 @@ class Database {
 
     private $mysqli;
 
-    public function __construct($serwer, $user, $pass, $baza) {
-        $this->mysqli = new mysqli($serwer, $user, $pass, $baza);
-        if ($this->mysqli->connect_errno) {
-            printf("Nie udało sie połączenie z serwerem: %s\n",
-            $this->mysqli->connect_error);
-            exit();
-        }
-        
-        if ($this->mysqli->set_charset("utf8")) {}
+    public function __construct() {
+        $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+        $cleardb_server = $cleardb_url["host"];
+        $cleardb_username = $cleardb_url["user"];
+        $cleardb_password = $cleardb_url["pass"];
+        $cleardb_db = substr($cleardb_url["path"],1);
+
+        $active_group = 'default';
+        $query_builder = TRUE;
+
+        $mysqli = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+
     }
 
 

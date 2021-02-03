@@ -29,7 +29,7 @@
 
     $um = new UserManager();
     $tm = new TimetableManager();
-    $db = new Database("localhost", "root", "", "scool_db");
+    $db = new Database();
 
     //get current user_id
     session_start();
