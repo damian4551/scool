@@ -30,7 +30,7 @@ class Database {
     public function selectUser($username, $password, $table) {
         $id = -1;
         $sql = "SELECT * FROM $table WHERE username='$username' OR email='$username'";
-        echo $sql;
+
         if ($result = $this->mysqli->query($sql)) {
             $ile = $result->num_rows;
 

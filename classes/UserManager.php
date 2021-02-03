@@ -90,13 +90,12 @@ class UserManager {
             ];
 
         $data = filter_input_array(INPUT_POST, $args);
-
+        echo $user_id;
         $username = $data['username'];
         $password = $data['password'];
 
         $user_id = $db->selectUser($username, $password, "users");
         
-        /*
         if ($user_id >= 0) {
             //session start and delete last user's session from db
             session_start();
@@ -108,8 +107,7 @@ class UserManager {
             $db->insert("INSERT INTO logged_in_users (session_id, user_id, last_update) VALUES ('$session_id', '$user_id', '$last_update')");
             session_destroy();
         }
-        */
-        
+
         return $user_id;
         
     }

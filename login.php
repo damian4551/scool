@@ -21,7 +21,6 @@
 
     if (filter_input(INPUT_POST, "login_user")) {
         
-        
         $user_id = $um->loginUser($db);
         echo $user_id;
         /*
