@@ -20,15 +20,17 @@
 
 
     if (filter_input(INPUT_POST, "login_user")) {
-
-        $user_id = $um->loginUser($db);
+        
         /*
+        $user_id = $um->loginUser($db);
+        
         if ($user_id == -1) {
             $user_error = 'Niepoprawne dane!';
         } else {
             header("location:index.php");
         }
         */
+        
     }
 
     //get current user_id and redirect to dashboard
