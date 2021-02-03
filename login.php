@@ -30,7 +30,7 @@
             $user_error = 'Niepoprawne dane!';
         }
     }
-
+    echo $user_id;
     if($user_id >= 0) {
         header("location:index.php");
     }
