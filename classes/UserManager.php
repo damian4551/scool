@@ -84,7 +84,6 @@ class UserManager {
     public function loginUser($db) {
         $user_id = -1;
 
-        /
         $args = [
             'username' => FILTER_SANITIZE_MAGIC_QUOTES,
             'password' => FILTER_SANITIZE_MAGIC_QUOTES
