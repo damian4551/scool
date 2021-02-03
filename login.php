@@ -21,7 +21,7 @@
     //get current user_id and redirect to dashboard
     session_start();
     $session_id = session_id();
-    $user_id = $um->getLoggedInUser($db, $session_id);
+    $logged_user_id = $um->getLoggedInUser($db, $session_id);
     session_destroy();
 
     if (filter_input(INPUT_POST, "login_user")) {
@@ -30,8 +30,8 @@
             $user_error = 'Niepoprawne dane!';
         }
     }
-    echo $user_id;
-    if($user_id >= 0) {
+    
+    if($logged_user_id >= 0) {
         header("location:index.php");
     }
     
