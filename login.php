@@ -22,7 +22,6 @@
     if (filter_input(INPUT_POST, "login_user")) {
         
         $user_id = $um->loginUser($db);
-        echo $user_id;
         /*
         if ($user_id == -1) {
             $user_error = 'Niepoprawne dane!';
