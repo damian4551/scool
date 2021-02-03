@@ -26,16 +26,9 @@
 
         $user_id = $um->loginUser($db, $username, $password);
         
-        echo $user_id;
-        /*
         if ($user_id == -1) {
             $user_error = 'Niepoprawne dane!';
-        } else {
-            header("location:index.php");
         }
-        */
-        
-
     }
 
     //get current user_id and redirect to dashboard
