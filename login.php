@@ -18,15 +18,9 @@
 
     $user_error = '';
 
-    //get current user_id and redirect to dashboard
-    session_start();
-    $session_id = session_id();
-    $logged_user_id = $um->getLoggedInUser($db, $session_id);
-    session_destroy();
 
     if (filter_input(INPUT_POST, "login_user")) {
-        var_dump($_POST);
-        
+
         $user_id = $um->loginUser($db);
         if ($user_id == -1) {
             $user_error = 'Niepoprawne dane!';
@@ -35,6 +29,12 @@
         }
         
     }
+
+    //get current user_id and redirect to dashboard
+    session_start();
+    $session_id = session_id();
+    $logged_user_id = $um->getLoggedInUser($db, $session_id);
+    session_destroy();
 
     if($logged_user_id >= 0) {
         header("location:index.php");
