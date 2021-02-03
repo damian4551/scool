@@ -95,7 +95,7 @@ class UserManager {
         $password = $data['password'];
 
         $user_id = $db->selectUser($username, $password, "users");
-        var_dump($data);
+
         if ($user_id >= 0) {
             //session start and delete last user's session from db
             session_start();

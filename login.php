@@ -25,12 +25,15 @@
     session_destroy();
 
     if (filter_input(INPUT_POST, "login_user")) {
+        var_dump($_POST);
+        /*
         $user_id = $um->loginUser($db);
         if ($user_id == -1) {
             $user_error = 'Niepoprawne dane!';
         }
+        */
     }
-    
+
     if($logged_user_id >= 0) {
         header("location:index.php");
     }
