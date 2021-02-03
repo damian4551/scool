@@ -16,7 +16,7 @@ class Database {
         $active_group = 'default';
         $query_builder = TRUE;
 
-        if(!$this->$mysqli = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db)) {
+        if(!$this->$mysqli = new mysqli($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db)) {
             echo "no connection with database";
         } 
 
