@@ -83,18 +83,20 @@ class UserManager {
 
     public function loginUser($db) {
         $user_id = -1;
-        echo $user_id;
-        /*
+
+        /
         $args = [
             'username' => FILTER_SANITIZE_MAGIC_QUOTES,
             'password' => FILTER_SANITIZE_MAGIC_QUOTES
             ];
 
         $data = filter_input_array(INPUT_POST, $args);
-        echo $user_id;
+
         $username = $data['username'];
         $password = $data['password'];
-
+        echo $username;
+        echo $password;
+        /*
         $user_id = $db->selectUser($username, $password, "users");
         
         if ($user_id >= 0) {
