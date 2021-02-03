@@ -124,8 +124,12 @@ class UserManager {
     }
 
     public function getLoggedInUser($db, $session_id) {
+        echo $session_id;
+        
         $user_id = $db->select("SELECT * FROM logged_in_users WHERE session_id='$session_id'", 'user_id');
 
+        echo $user_id;
+        
         return $user_id;
     }
 

@@ -5,6 +5,7 @@ class Database {
     private $mysqli;
 
     public function __construct() {
+        
         $cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
         $cleardb_server = $cleardb_url["host"];
         $cleardb_username = $cleardb_url["user"];
@@ -18,13 +19,9 @@ class Database {
         $active_group = 'default';
         $query_builder = TRUE;
 
-        if($mysqli = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db)) {
-            echo "<br>";
-            echo "connection";
-        } else {
-            echo "<br>";
-            echo "no connection";
-        }
+        if(!$mysqli = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db)) {
+            echo "no connection with database";
+        } 
 
     }
 
