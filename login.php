@@ -25,6 +25,8 @@
         $password = $_POST['password'];
 
         $user_id = $um->loginUser($db, $username, $password);
+        
+        echo $user_id;
         /*
         if ($user_id == -1) {
             $user_error = 'Niepoprawne dane!';

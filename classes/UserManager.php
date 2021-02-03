@@ -84,12 +84,6 @@ class UserManager {
     public function loginUser($db, $username, $password) {
         $user_id = -1;
 
-        
-        echo $user_id;
-        echo $username;
-        echo $password;
-        
-        /*
         $user_id = $db->selectUser($username, $password, "users");
         
         if ($user_id >= 0) {
@@ -105,7 +99,7 @@ class UserManager {
         }
 
         return $user_id;
-        */
+        
     }
 
     public function logoutUser($db) {
