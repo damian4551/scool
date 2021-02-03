@@ -59,7 +59,7 @@
             </p>
         </div>
         <div class="login-form">
-            <form action="login.php" method="post">
+            <form method="post">
                 <div class="input-block">
                     <div class="input-element">
                         <img src="./icons/user.svg" alt="username" />
