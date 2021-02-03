@@ -28,12 +28,13 @@
         echo $password;
 
         $user_id = $um->loginUser($db);
-        
+        /*
         if ($user_id == -1) {
             $user_error = 'Niepoprawne dane!';
         } else {
             header("location:index.php");
         }
+        */
         
 
     }
