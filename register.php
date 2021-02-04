@@ -66,7 +66,7 @@
                         <input type="password" placeholder="hasło" name="password" minlength="6"/>
                     </div>
                 </div>
-                <input type="submit" class="btn" value="Zarejestruj" name="register_user" />
+                <button type="submit" class="btn" value="zarejestruj" name="register_user">zarejestruj</button>
             </form>
         </div>
         <div class="links-block">

@@ -70,7 +70,7 @@
                         <input type="password" placeholder="hasło" name="password" />
                     </div>
                 </div>
-                <input type="submit" class="btn" value="zaloguj" name="login_user" />
+                <button type="submit" class="btn" value="zaloguj" name="login_user">zaloguj</button>
             </form>
         </div>
         <div class="links-block">
