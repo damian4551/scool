@@ -152,9 +152,9 @@
                         $today_tasks = $taskm->showDayTasks($db, $current_date, $user_id);
                         foreach($today_tasks as $task) {
                             echo "
-                            <label class='custom-checkbox'> <a href=dashboard.php?update_status=$task->task_id>$task->title</a>
+                            <label class='custom-checkbox'> <a href=index.php?update_status=$task->task_id>$task->title</a>
                                 <input type='checkbox'>
-                                <a href=dashboard.php?update_status=$task->task_id><span class='checkmark'";
+                                <a href=index.php?update_status=$task->task_id><span class='checkmark'";
                                 if($task->status == 1) {
                                     echo 'style="background-color: #A5A9D3"';
                                 }
@@ -191,9 +191,9 @@
                         $tommorow_tasks = $taskm->showDayTasks($db, $tomorrow_date, $user_id);
                         foreach($tommorow_tasks as $task) {
                             echo "
-                            <label class='custom-checkbox'> <a href=dashboard.php?update_status=$task->task_id>$task->title</a>
+                            <label class='custom-checkbox'> <a href=index.php?update_status=$task->task_id>$task->title</a>
                                 <input type='checkbox'>
-                                <a href=dashboard.php?update_status=$task->task_id><span class='checkmark'";
+                                <a href=index.php?update_status=$task->task_id><span class='checkmark'";
                                 if($task->status == 1) {
                                     echo 'style="background-color: #A5A9D3"';
                                 }

@@ -63,7 +63,7 @@
                     </div>
                     <div class="input-element">
                         <img src="./icons/key.svg" alt="password" />
-                        <input type="password" placeholder="hasło" name="password" minlength="6"/>
+                        <input type="password" placeholder="hasło (min. 6 znaków)" name="password" minlength="6"/>
                     </div>
                 </div>
                 <button type="submit" class="btn" value="zarejestruj" name="register_user">zarejestruj</button>
